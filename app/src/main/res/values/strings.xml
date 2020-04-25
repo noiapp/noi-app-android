@@ -277,13 +277,13 @@ anonymous"</string>
     <string name="bluetooth_setting_data_explanation_title">"Is my data safe?"</string>
 
     <!-- Bluetooth Setting: Text unten -->
-    <string name="bluetooth_setting_tracking_explanation_text1">"Via BLE (Bluetooth Low Energy) the app recognizes ecounters with other users. Such encouters will be registered by the app, if two users stand close to each other for a certain time period, and are deleted after 21 days."</string>
+    <string name="bluetooth_setting_tracking_explanation_text1">"Via BLE (Bluetooth Low Energy) the app recognizes encounters with other users. Such encounters will be registered by the app, if two users stand close to each other for a certain time period, and are deleted after 21 days."</string>
 
     <!-- Bluetooth Setting: Text unten -->
     <string name="bluetooth_setting_tracking_explanation_text2">"Encounters with other users are only saved locally on your smartphone."</string>
 
     <!-- Bluetooth Setting: Text unten -->
-    <string name="bluetooth_setting_data_explanation_text1">"Each App has its own dynamic ID that is randomly generated via «HMAC(SHA256)» and changes every 15 minutes. This way each user remains anonymous."</string>
+    <string name="bluetooth_setting_data_explanation_text1">"Each app has its own dynamic ID that is randomly generated via «HMAC(SHA256)» and changes every 15 minutes. This way each user remains anonymous."</string>
 
     <!-- Bluetooth Setting: Text unten -->
     <string name="bluetooth_setting_data_explanation_text2">"Important features:
@@ -324,10 +324,10 @@ anonymous"</string>
     <string name="meldungen_additional_info_title">"What does that mean?"</string>
 
     <!-- Meldungen: Info Text 1 -->
-    <string name="meldungen_additional_info_text1">"To stop a viral outbreak, you must break the chain of transmission. You can do this by isolating contagious people. Only, there is a problem with COVID-19. Infected people can be contagious, before having symptoms, which means: You can spread the virus without knowing. If only people with symptoms isolate themselves, the virus can still spread. We are one step behind."</string>
+    <string name="meldungen_additional_info_text1">"To stop a viral outbreak, you must break the chain of transmission. You can do this by isolating contagious people. Only, there is a problem with COVID-19. Infected people can be contagious, before having symptoms, which means: you can spread the virus without knowing. If only people with symptoms isolate themselves, the virus can still spread. We are one step behind."</string>
 
     <!-- Meldungen: zusätzlicher Info Text -->
-    <string name="meldungen_additional_info_text2">"Therefore, exposed contacts should be informed. Then, they can also precociously isolate early – before they feel sick. Not everyone exposed contact will have the Virus. But those who do won’t pass it on. The trick is to be one step ahead."</string>
+    <string name="meldungen_additional_info_text2">"Therefore, exposed contacts should be informed. Then, they can also precociously isolate early – before they feel sick. Not every exposed contact will have the virus. But those who do won’t pass it on. The trick is to be one step ahead."</string>
 
     <!-- Hinweis beim Eingabefeld für den Authentifizierungs-Code -->
     <string name="auth_code_input_hint">"000-000"</string>
