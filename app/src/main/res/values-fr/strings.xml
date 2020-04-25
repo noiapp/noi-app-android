@@ -8,11 +8,11 @@
 <resources>
 
     <!-- Name der App -->
-    <string name="app_name">"Next Step"</string>
+    <string name="app_name">"Protetti"</string>
 
     <!-- App Name unter Icon (iOS) -->
     <!-- Fuzzy -->
-    <string name="CFBundleDisplayName">"Next Step"</string>
+    <string name="CFBundleDisplayName">"Protetti"</string>
 
     <!-- Title of the menu item home -->
     <string name="menu_item_home">"Accueil"</string>
@@ -113,7 +113,7 @@ Vous apportez une contribution importante à l'arrêt de la propagation du virus
     <string name="inform_empfehlung">"Recommandation"</string>
 
     <!-- Inform: Empfehlung Text -->
-    <string name="inform_empfehlung_subtext">"Un examen médical ou un test de laboratoire n'est pas recommandé.
+    <string name="inform_empfehlung_subtext">"Un examen médical ou un test de laboratoire n'est pas recommandé pour l'instant.
 
 Suivez les règles d'hygiène et de comportement."</string>
 
@@ -150,7 +150,7 @@ Suivez les règles d'hygiène et de comportement."</string>
     <string name="close">"Fermer"</string>
 
     <!-- App Name ohne COVID-19 -->
-    <string name="app_name_star">"Next Step"</string>
+    <string name="app_name_star">"Protetti"</string>
 
     <!-- Info Text ohne COVID-19 -->
     <string name="homescreen_handshakes_module_info_label_star">"Il n'y a actuellement aucun signal d'autres utilisateurs qui étaient récemment à proximité."</string>
@@ -183,7 +183,7 @@ Suivez les règles d'hygiène et de comportement."</string>
     <string name="homescreen_inform_module_gemeldet_label">"Vous avez informé tous les utilisateurs que vous avez rencontrés récemment."</string>
 
     <!-- Titel für Push-Nachrichten, wenn erkannt wird, dass ein Nutzer exposed war -->
-    <string name="push_exposed_title">"Neue Informationen verfügbar"</string>
+    <string name="push_exposed_title">"Nouvelle information disponible"</string>
 
     <!-- Titel für Push-Nachrichten, wenn erkannt wird, dass ein Nutzer exposed war -->
     <string name="push_exposed_text">"Veuillez ouvrir l'application pour plus d'informations."</string>
@@ -197,7 +197,7 @@ et anonyme"</string>
     <string name="onboarding_desc_3">"Si votre test est positif, vous pouvez informer de manière anonyme toutes les personnes que vous avez rencontrées afin qu'elles puissent prendre les mesures de précaution nécessaires."</string>
     <string name="onboarding_title_4">"Autorisations"</string>
     <string name="onboarding_desc_4">"Cette application a besoin des autorisations suivantes pour fonctionner correctement."</string>
-    <string name="onboarding_title_5">"Next Step"</string>
+    <string name="onboarding_title_5">"Protetti"</string>
     <string name="onboarding_desc_5">"Ensemble, nous pouvons franchir la prochaine étape de l'isolement."</string>
     <string name="onboarding_android_location_permission_info">"Le traçage fonctionne via la technologie Bluetooth Low Energy, donc l'application doit avoir accès à Bluetooth. Sur Android, cependant, il n'est possible d'accéder à Bluetooth que si la localisation est autorisée.
 
@@ -286,20 +286,20 @@ L'application n'accède jamais à votre position!"</string>
     <string name="bluetooth_setting_data_explanation_title">"Mes données sont-elles en sécurité?"</string>
 
     <!-- Bluetooth Setting: Text unten -->
-    <string name="bluetooth_setting_tracking_explanation_text1">"Die App erkennt mittels Bluetooth, genauer gesagt Bluetooth Low Energy, Begegnungen mit anderen Nutzern. Eine Begegnung wird durch die App registriert, wenn zwei Nutzer sich für eine bestimmte Zeit in der Nähe aufhalten, und nach 21 Tagen wieder gelöscht."</string>
+    <string name="bluetooth_setting_tracking_explanation_text1">"Par le BLE (Bluetooth Low Energy, Bluetooth à faible consommation d'energie) l'application reconnait les rencotres avec les autres utilisateurs. Ces rencontres seront enregistrées par l'application, si deux utilisateurs restent à côté pendant quelque temps et elles sont supprimées après 21 jours."</string>
 
     <!-- Bluetooth Setting: Text unten -->
-    <string name="bluetooth_setting_tracking_explanation_text2">"Eine Begegnung mit einem anderen Nutzer wird nur lokal auf deinem Smartphone gespeichert."</string>
+    <string name="bluetooth_setting_tracking_explanation_text2">"Les rencontres avec les autres utilisateurs are sauvegardées uniquement sur votre smartphone."</string>
 
     <!-- Bluetooth Setting: Text unten -->
-    <string name="bluetooth_setting_data_explanation_text1">"Jede App hat eine dynamische ID, die alle 15 Minuten mittels «HMAC(SHA256)» zufällig generiert wird. So bleibt jeder Nutzer anonym."</string>
+    <string name="bluetooth_setting_data_explanation_text1">"Chaque appli a son ID dynamique qui est généré aléatoirement par «HMAC(SHA256)» et qui change toutes les 15 minutes. De cette façon l'utilisateur reste anonyme."</string>
 
     <!-- Bluetooth Setting: Text unten -->
-    <string name="bluetooth_setting_data_explanation_text2">"Wichtige Eigenschaften:
-- Kein Location-Tracking
-- Keine Analytics oder Advertising Dienste
-- Offene Architektur / Protokoll und Spezifikation inkl. SDK für iOS und Android
-- Interoperabilität (Eigene App, eigenes Backend)
+    <string name="bluetooth_setting_data_explanation_text2">"Caractéristiques importantes:
+- pas de traçage de la location
+- pad d'analityques ni de pubblicité
+- Architecture ouverte / protocole et specification inclues. SDK pour iOS et Android
+- Interopérabilité (sa propre appli, son propre Backend)
 - Open Source"</string>
     <string name="reports_title_homescreen">"Messages"</string>
 
@@ -319,10 +319,10 @@ L'application n'accède jamais à votre position!"</string>
     <string name="hinweis_title">"Remarque"</string>
 
     <!-- Hinweis Text -->
-    <string name="hinweis_text">"Eine Person, der du begegnet bist, wurde positiv auf COVID-19 getestet."</string>
+    <string name="hinweis_text">"Une personne que vous avez rencontrée a été testée positive au COVID-19"</string>
     <string name="button_report_illness">"Signaler une maladie"</string>
     <string name="meldungen_meldung_title">"Note"</string>
-    <string name="meldungen_meldung_text">"Eine Person, der du begegnet bist, wurde positiv auf COVID-19 getestet. Bitte informiere dich hier über die Verhaltensempfehlungen."</string>
+    <string name="meldungen_meldung_text">"Une personne que vous avez rencontrée a été testée positive au COVID-19. Merci de lire les informations autour du comportement recommandé ici."</string>
     <string name="meldungen_meldung_more_button">"En savoir plus"</string>
     <string name="tracing_active_title">"Suivi actif"</string>
     <string name="tracing_active_text">"Les rencontres sont enregistrées de manière anonyme sur votre appareil."</string>
@@ -333,16 +333,16 @@ L'application n'accède jamais à votre position!"</string>
     <string name="meldungen_additional_info_title">"Qu'est-ce que cela signifie?"</string>
 
     <!-- Meldungen: Info Text 1 -->
-    <string name="meldungen_additional_info_text1">"Um die Verbreitung eines Virus zu stoppen, muss man die Ansteckungsketten unterbrechen. Das gelingt, wenn man ansteckende Personen isoliert. Nur: Beim neuen Coronavirus gibt es ein Problem. Es kann sein, dass du bereits ansteckend bist, bevor du dich krank fühlst. So kann sich das Virus ausbreiten, obwohl sich Personen mit Symptomen selbst isolieren. Denn wir sind einen Schritt zu spät."</string>
+    <string name="meldungen_additional_info_text1">"Afin d'arreter une épidémie virale, vous devez interrompre la chaîne de transmission. Vous pouvez le faire en confinant toute personne contagieuse. Toutefois, il y a un problème avec le COVID-19. Toute personne infectée peut être contagieuse avant de presenter les symptômes ce qui signifie que vous pouvez propager le virus sans le savoir. Si uniquement les personnes ayant des symptômes se confinent, le virus peut toujours se propager, nous sommes toujours un pas en arrière  "</string>
 
     <!-- Meldungen: zusätzlicher Info Text -->
-    <string name="meldungen_additional_info_text2">"Deshalb sollen Kontakpersonen informiert werden. So können sie sich frühzeitig isolieren – noch bevor sie sich krank fühlen. Natürlich haben dann nicht alle Kontaktpersonen das Virus. Aber diejenigen, die es haben, geben es nicht weiter. So sind wir dem Virus einen Schritt voraus."</string>
+    <string name="meldungen_additional_info_text2">"Pourtant ces qui ont été exposés devraient en être informés. Alors ils pourront confiner eux même précocement - avant de tomber malades. Toutes les personnes ayant été exposées n'auront pas the virus mais ceux qui l'auront ne le propagerons pas aux autres. L'astuce est d'être toujours un pas en avant."</string>
 
     <!-- Hinweis beim Eingabefeld für den Authentifizierungs-Code -->
     <string name="auth_code_input_hint">"000-000"</string>
 
     <!-- Meldungen: Info Titel -->
-    <string name="meldungen_additional_info_title2">"Wie soll ich mich verhalten?"</string>
+    <string name="meldungen_additional_info_title2">"Qu'est-ce je dois faire ?"</string>
 
     <!-- Meldungen: Text -->
     <string name="meldungen_additional_info_text3">"Experten vom BAG beraten Sie telefonisch.
@@ -351,36 +351,36 @@ Corona-Infoline
 +41 58 463 00 00"</string>
 
     <!-- Meldungen: Jetzt anrufen -->
-    <string name="meldungen_call_button_title">"Jetzt anrufen"</string>
+    <string name="meldungen_call_button_title">"Appeler maintenant (appel gratuit depuis un poste fixe en France)"</string>
 
     <!-- Bezeichnung für Beratungs-Hotline -->
-    <string name="meldungen_hotline_label">"Corona-Infoline"</string>
+    <string name="meldungen_hotline_label">"Covid-19-Infoline"</string>
 
     <!-- Label für Anrufen-Button -->
-    <string name="button_call_now">"Jetzt anrufen"</string>
+    <string name="button_call_now">"Appeler maintenant"</string>
 
     <!-- Telefon-Nummer für die Hotline -->
-    <string name="tel_hotline">"+41 58 463 00 00"</string>
+    <string name="tel_hotline">"0 800 130 000"</string>
 
     <!-- Meldungen: Text ohne Hotline Info -->
-    <string name="meldungen_additional_info_text3_reduced">"Experten vom BAG beraten dich telefonisch."</string>
-    <string name="meldungen_infected_title">"Infektion gemeldet"</string>
-    <string name="meldungen_infected_text">"Vielen Dank! Nutzer denen du begegnet bist, werden anonym informiert und können sich isolieren."</string>
-    <string name="foreground_service_notification_errors">"App kann zur Zeit nicht richtig funktionieren:"</string>
-    <string name="foreground_service_notification_error_network_sync">"beim Laden der Daten ist ein Fehler aufgetreten"</string>
-    <string name="foreground_service_notification_error_location_permission">"Standort Berechtigung fehlt (benötigt um auf Bluetooth zuzugreifen)"</string>
-    <string name="foreground_service_notification_error_bluetooth_disabled">"Bluetooth ist deaktiviert"</string>
-    <string name="foreground_service_notification_error_battery_optimization">"Akku Optimierung ist aktiviert (verhindert zuverlässiges Scanning im Hintergrund)"</string>
+    <string name="meldungen_additional_info_text3_reduced">"Les experts de la Covid-19-Infoline vous donneront un avis par téléphone."</string>
+    <string name="meldungen_infected_title">"Infection rapportée"</string>
+    <string name="meldungen_infected_text">"Merci beaucoup ! Toutes les personnes que vous avez informées pourrons s'autoconfiner."</string>
+    <string name="foreground_service_notification_errors">"L'appi ne peut pas fonctionner pour l'instant:"</string>
+    <string name="foreground_service_notification_error_network_sync">"Une erreur est survenue pendant le téléchargement des données."</string>
+    <string name="foreground_service_notification_error_location_permission">"La permission pour la localisation est manquante (c'est indispensable pour acceder au Bluetooth)"</string>
+    <string name="foreground_service_notification_error_bluetooth_disabled">"Le Bluetooth est désactivée"</string>
+    <string name="foreground_service_notification_error_battery_optimization">"L'optimization de la batterie est activée (cela rend la scansion en arrière-plan peu fiable)"</string>
 
     <!-- Beruhigender Text für Detail-Seite, falls Meldung eingegangen ist -->
-    <string name="meldungen_hinweis_info_text1">"Dies bedeutet nicht, dass du angesteckt wurdest. Aber es ist wichtig, dass du dich über mögliche Massnahmen informierst."</string>
+    <string name="meldungen_hinweis_info_text1">"Cela ne signifie pas que vous avez été infecté(e) mais il est important que vous vous mettiez au courant de mesures suffisantes."</string>
 
     <!-- Info-Text "Was bedeuteted das" für Person, die selbst bemeldet hat -->
-    <string name="meldungen_hinweis_info_text1_infected">"Dies bedeutet nicht, dass jemand angesteckt wurde. Aber es ist wichtig, dass jede Person, der du begegnet bist, sich über angemessene Massnahmen informieren kann."</string>
+    <string name="meldungen_hinweis_info_text1_infected">"Cela ne signifie pas que d'autres ont été infecté(e)s mail il est important que tous ceux que vous avez rencontré(e)s puissent prendre des mesures suffisantes."</string>
 
     <!-- Titel der Nachricht, die auf Beta-Status Hinweist -->
-    <string name="preview_warning_title">"Vorschau Version"</string>
+    <string name="preview_warning_title">"Version d'aperçu"</string>
 
     <!-- Text der Nachricht, die auf Beta-Status Hinweist -->
-    <string name="preview_warning_text">"Diese App dient als Vorschau, um die DP-3T Implementation zu zeigen. Es ist kein produktiv verwendbarer COVID-19 Tracer."</string>
+    <string name="preview_warning_text">"Cette application a été construite en tant que démonstration de l'implementation DP-3T. Ce n'est pas un traceur productif Covid-19"</string>
 </resources>
