@@ -381,4 +381,61 @@ Infoline Coronavirus
 
     <!-- Text der Nachricht, die auf Beta-Status Hinweist -->
     <string name="preview_warning_text">"Questa app serve come anteprima per mostrare l'implementazione di DP-3T. Non è un tracciante COVID-19 utilizzabile in modo produttivo."</string>
+
+    <!-- Label auf dem Button, der zum Debug-Screen führt -->
+    <string name="debug_settings_title">"Debug"</string>
+
+    <!-- Titel für die Debug-Einstellungen zur Status-Überschreibung -->
+    <string name="debug_state_setting_title">"Forza stato dell'app"</string>
+
+    <!-- Erklärungstext für die Debug-Einstellungen zur Status-Überschreibung -->
+    <string name="debug_state_setting_text">"Questa impostazione sovrascrive lo stato visivo dell'app. La funzionalità di tracciatura non è interessata."</string>
+
+    <!-- Einstellungs-Option zum überschreiben des App-Zustands: Keine -->
+    <string name="debug_state_setting_option_none">"Nessuna forzatura"</string>
+
+    <!-- Einstellungs-Option zum überschreiben des App-Zustands: Gesund -->
+    <string name="debug_state_setting_option_ok">"Sano"</string>
+
+    <!-- Einstellungs-Option zum überschreiben des App-Zustands: Einem positiven Kontakt ausgesetzt -->
+    <string name="debug_state_setting_option_exposed">"Incontro positivo"</string>
+
+    <!-- Einstellungs-Option zum überschreiben des App-Zustands: Selbst positiv getestet -->
+    <string name="debug_state_setting_option_infected">"Certificato positivo"</string>
+
+    <!-- Titel für die Debug-Info zum Tracing-Status -->
+    <string name="debug_sdk_state_title">"Stato SDK"</string>
+
+    <!-- Erklärungstext für die Debug-Info zum Tracing-Status -->
+    <string name="debug_sdk_state_text">"Lo stato corrente dell'SDK DP-3T."</string>
+
+    <!-- Bezeichnung für den aktiven SDK Status -->
+    <string name="debug_sdk_state_active">"operativo"</string>
+
+    <!-- Bezeichnung für den inaktiven SDK Status -->
+    <string name="debug_sdk_state_inactive">"non operativo"</string>
+
+    <!-- Bezeichnung für den letzen sync-Zeitpunkt -->
+    <string name="debug_sdk_state_last_synced">"Ultima sincronizzazione: "</string>
+
+    <!-- Bezeichnung für den Fall, bei dem der User selber als positiv getestet gemeldet wurde -->
+    <string name="debug_sdk_state_self_exposed">"Auto riferito: "</string>
+
+    <!-- Bezeichnung für den Fall, bei dem ein Kontakt als positiv getestet gemeldet wurde -->
+    <string name="debug_sdk_state_contact_exposed">"Contatto segnalato: "</string>
+
+    <!-- Bezeichnung für die Anzahl bluetooth-handshakes, die ausgeführt wurden -->
+    <string name="debug_sdk_state_number_handshakes">"Numero di BLE handshake: "</string>
+
+    <!-- Debug-Status-Bezeichnung für boleschen Wert 'true' -->
+    <string name="debug_sdk_state_boolean_true">"sì"</string>
+
+    <!-- Debug-Status-Bezeichnung für boleschen Wert 'false' -->
+    <string name="debug_sdk_state_boolean_false">"no"</string>
+
+    <!-- Button-Text für das Zurücksetzen des lokalen SDK Zustandes -->
+    <string name="debug_sdk_button_reset">"Ripristina SDK"</string>
+
+    <!-- Infotext, wenn lokal das SDK zurückgesetzt wurde -->
+    <string name="debug_sdk_reset_text">"Lo stato locale dell'SDK DP-3T è stato ripristinato."</string>
 </resources>
