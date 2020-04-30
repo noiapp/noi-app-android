@@ -21,7 +21,7 @@ jobs:
     - name: Build with Gradle
       run: ./gradlew assembleProdRelease
 
-   - name: Build Debug with Gradle
+    - name: Build Debug with Gradle
       run: ./gradlew assembleDevDebug
 
     - name: Create Release
