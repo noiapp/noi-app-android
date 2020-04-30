@@ -56,6 +56,3 @@ jobs:
         asset_path: app/build/outputs/apk/dev/debug/app-dev-debug.apk 
         asset_name: app-debug-release.apk
         asset_content_type: application/vnd.android.package-archive
-
-
-

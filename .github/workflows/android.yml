@@ -28,7 +28,7 @@ jobs:
           name: app
           path: app/build/outputs/apk/prod/release/app-prod-release.apk
 
-   - name: Build Debug with Gradle
+    - name: Build Debug with Gradle
       run: ./gradlew assembleDevDebug
 
     - name: Upload debug APK
@@ -36,4 +36,3 @@ jobs:
       with:
           name: app
           path: app/build/outputs/apk/dev/debug/app-dev-debug.apk
-
