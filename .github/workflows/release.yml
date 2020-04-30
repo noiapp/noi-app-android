@@ -20,7 +20,6 @@ jobs:
 
     - name: Build with Gradle
       run: ./gradlew assembleProdRelease
-
     - name: Build Debug with Gradle
       run: ./gradlew assembleDevDebug
 
