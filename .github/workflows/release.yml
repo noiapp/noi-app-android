@@ -21,6 +21,9 @@ jobs:
     - name: Build with Gradle
       run: ./gradlew assembleProdRelease
 
+    - name: Build Debug with Gradle
+      run: ./gradlew assembleDevDebug
+
     - name: Create Release
       id: create_release
       uses: actions/create-release@v1
@@ -42,9 +45,6 @@ jobs:
         asset_path: app/build/outputs/apk/prod/release/app-prod-release.apk 
         asset_name: app-prod-release.apk
         asset_content_type: application/vnd.android.package-archive
-
-    - name: Build Debug with Gradle
-      run: ./gradlew assembleDevDebug
 
     - name: Upload debug .apk
       id: upload-release-debug-apk-asset
