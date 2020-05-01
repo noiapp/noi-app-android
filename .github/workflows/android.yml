@@ -26,7 +26,7 @@ jobs:
       uses: actions/upload-artifact@v1.0.0
       with:
           name: app
-          path: app/build/outputs/apk/prod/release/app-prod-release.apk
+          path: app/build/outputs/apk/prodNoiApp/release/app-prod-release.apk
 
     - name: Build Debug with Gradle
       run: ./gradlew assembleDevNoiAppDebug
@@ -35,4 +35,4 @@ jobs:
       uses: actions/upload-artifact@v1.0.0
       with:
           name: app
-          path: app/build/outputs/apk/dev/debug/app-dev-debug.apk
+          path: app/build/outputs/apk/devNoiApp/debug/app-dev-debug.apk
