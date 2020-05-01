@@ -13,6 +13,7 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.PowerManager;
 import android.widget.ScrollView;
+
 import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentActivity;
@@ -23,72 +24,78 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
-import org.dpppt.android.sdk.DP3T;
-
+import org.dpppt.android.app.MainApplication;
 import org.dpppt.android.app.R;
+import org.dpppt.android.app.sdk.DP3T;
+
+import javax.inject.Inject;
 
 public class OnboardingActivity extends FragmentActivity {
 
-	private ViewPager2 viewPager;
-	private FragmentStateAdapter pagerAdapter;
-	private FloatingActionButton floatingActionButton;
+    private ViewPager2 viewPager;
+    private FragmentStateAdapter pagerAdapter;
+    private FloatingActionButton floatingActionButton;
 
-	@Override
-	protected void onCreate(@Nullable Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_onboarding);
+    @Inject
+    DP3T DP3T;
 
-		ScrollView scrollView = findViewById(R.id.onboarding_scroll_view);
-		viewPager = findViewById(R.id.pager);
-		pagerAdapter = new OnboardingSlidePageAdapter(this);
-		viewPager.setAdapter(pagerAdapter);
-		viewPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
-			@Override
-			public void onPageSelected(int position) {
-				updateStepButton();
-				scrollView.smoothScrollTo(0, 0);
-			}
-		});
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        MainApplication.Companion.getAppComponent(this).inject(this);
+        setContentView(R.layout.activity_onboarding);
 
-		TabLayout tabLayout = findViewById(R.id.onboarding_tab_dots);
-		new TabLayoutMediator(tabLayout, viewPager, (tab, position) -> tab.select()).attach();
+        ScrollView scrollView = findViewById(R.id.onboarding_scroll_view);
+        viewPager = findViewById(R.id.pager);
+        pagerAdapter = new OnboardingSlidePageAdapter(this);
+        viewPager.setAdapter(pagerAdapter);
+        viewPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
+            @Override
+            public void onPageSelected(int position) {
+                updateStepButton();
+                scrollView.smoothScrollTo(0, 0);
+            }
+        });
 
-		floatingActionButton = findViewById(R.id.onboarding_fab);
-		floatingActionButton.setOnClickListener(v -> {
-			int currentItem = viewPager.getCurrentItem();
-			if (currentItem < pagerAdapter.getItemCount() - 1) {
-				viewPager.setCurrentItem(currentItem + 1, true);
-			} else {
-				DP3T.start(this);
-				setResult(RESULT_OK);
-				finish();
-			}
-		});
-	}
+        TabLayout tabLayout = findViewById(R.id.onboarding_tab_dots);
+        new TabLayoutMediator(tabLayout, viewPager, (tab, position) -> tab.select()).attach();
 
-	public void updateStepButton() {
-		floatingActionButton.setEnabled(checkPermissionsReady()
-				|| viewPager.getCurrentItem() < OnboardingSlidePageAdapter.SCREEN_INDEX_PERMISSIONS);
-	}
+        floatingActionButton = findViewById(R.id.onboarding_fab);
+        floatingActionButton.setOnClickListener(v -> {
+            int currentItem = viewPager.getCurrentItem();
+            if (currentItem < pagerAdapter.getItemCount() - 1) {
+                viewPager.setCurrentItem(currentItem + 1, true);
+            } else {
+                DP3T.start();
+                setResult(RESULT_OK);
+                finish();
+            }
+        });
+    }
 
-	public boolean checkPermissionsReady() {
-		BluetoothAdapter bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
-		boolean bluetoothEnabled = bluetoothAdapter != null && bluetoothAdapter.isEnabled();
-		PowerManager powerManager = (PowerManager) getSystemService(Context.POWER_SERVICE);
-		boolean batteryOptDeact = powerManager.isIgnoringBatteryOptimizations(this.getPackageName());
-		boolean locationGranted = ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) ==
-				PackageManager.PERMISSION_GRANTED;
-		return bluetoothEnabled && batteryOptDeact && locationGranted;
-	}
+    public void updateStepButton() {
+        floatingActionButton.setEnabled(checkPermissionsReady()
+                || viewPager.getCurrentItem() < OnboardingSlidePageAdapter.SCREEN_INDEX_PERMISSIONS);
+    }
 
-	@Override
-	public void onBackPressed() {
-		if (viewPager.getCurrentItem() == 0) {
-			setResult(RESULT_CANCELED);
-			finish();
-		} else {
-			viewPager.setCurrentItem(viewPager.getCurrentItem() - 1);
-		}
-	}
+    private boolean checkPermissionsReady() {
+        BluetoothAdapter bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
+        boolean bluetoothEnabled = bluetoothAdapter != null && bluetoothAdapter.isEnabled();
+        PowerManager powerManager = (PowerManager) getSystemService(Context.POWER_SERVICE);
+        boolean batteryOptDeact = powerManager.isIgnoringBatteryOptimizations(this.getPackageName());
+        boolean locationGranted = ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) ==
+                PackageManager.PERMISSION_GRANTED;
+        return bluetoothEnabled && batteryOptDeact && locationGranted;
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (viewPager.getCurrentItem() == 0) {
+            setResult(RESULT_CANCELED);
+            finish();
+        } else {
+            viewPager.setCurrentItem(viewPager.getCurrentItem() - 1);
+        }
+    }
 
 }
