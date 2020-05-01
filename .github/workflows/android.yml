@@ -20,7 +20,7 @@ jobs:
         java-version: 1.8
 
     - name: Build with Gradle
-      run: ./gradlew assembleProdRelease
+      run: ./gradlew assembleProdNoiAppRelease
 
     - name: Upload APK
       uses: actions/upload-artifact@v1.0.0
@@ -29,7 +29,7 @@ jobs:
           path: app/build/outputs/apk/prod/release/app-prod-release.apk
 
     - name: Build Debug with Gradle
-      run: ./gradlew assembleDevDebug
+      run: ./gradlew assembleDevNoiAppDebug
 
     - name: Upload debug APK
       uses: actions/upload-artifact@v1.0.0
