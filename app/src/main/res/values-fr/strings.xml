@@ -297,9 +297,9 @@ L'application n'accède jamais à votre position!"</string>
     <!-- Bluetooth Setting: Text unten -->
     <string name="bluetooth_setting_data_explanation_text2">"Caractéristiques importantes:
 - pas de traçage de la location
-- pad d'analityques ni de pubblicité
-- Architecture ouverte / protocole et specification inclues. SDK pour iOS et Android
-- Interopérabilité (sa propre appli, son propre Backend)
+- pad d'analityques ni de publicité
+- Architecture ouverte / protocôle et spécification inclus. SDK pour iOS et Android
+- Interopérabilité (sa propre app, son propre Backend)
 - Open Source"</string>
     <string name="reports_title_homescreen">"Messages"</string>
 
@@ -307,7 +307,7 @@ L'application n'accède jamais à votre position!"</string>
     <string name="meldungen_no_meldungen_title">"Aucun message"</string>
 
     <!-- Keine Meldungen Text -->
-    <string name="meldungen_no_meldungen_text">"Vous serez informé si vous soupçonnez une éventuelle infection."</string>
+    <string name="meldungen_no_meldungen_text">"Vous serez informé si vous soupçonnez une éventuelle contagion."</string>
 
     <!-- Push deaktiviert Titel -->
     <string name="push_deactivated_title">"Push désactivé"</string>
