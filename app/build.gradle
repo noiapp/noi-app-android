@@ -6,6 +6,7 @@
 
 plugins {
 	id 'com.android.application'
+	id 'com.gladed.androidgitversion' version '0.4.13'
 }
 
 android {
@@ -16,8 +17,8 @@ android {
 		applicationId "org.dpppt.android.app"
 		minSdkVersion 23
 		targetSdkVersion 29
-		versionCode 1
-		versionName "1.0"
+		versionName androidGitVersion.name()
+		versionCode androidGitVersion.code()
 	}
 
 	flavorDimensions "version"
