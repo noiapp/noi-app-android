@@ -19,6 +19,7 @@ This is the first implementation of a client using the [DP3T Android SDK](https:
 <img src="documentation/screenshots/screenshot_thankyou.jpg" width="256">
 </p>
 
+
 ## Repositories
 * Android SDK & Calibration app: [dp3t-sdk-android](https://github.com/DP-3T/dp3t-sdk-android)
 * iOS SDK & Calibration app: [dp3t-sdk-ios](https://github.com/DP-3T/dp3t-sdk-ios)
@@ -26,8 +27,10 @@ This is the first implementation of a client using the [DP3T Android SDK](https:
 * iOS Demo App: [dp3t-app-ios](https://github.com/DP-3T/dp3t-app-ios)
 * Backend SDK: [dp3t-sdk-backend](https://github.com/DP-3T/dp3t-sdk-backend)
 
+
 ## Work in Progress
 The demo app shows how the SDK can be used in a real app, but all content and UX aspects, especially messages and navigation flows are in an alpha stage. 
+
 
 ## Further Documentation
 The full set of documents for DP3T is at https://github.com/DP-3T/documents. Please refer to the technical documents and whitepapers for a description of the implementation.
@@ -40,6 +43,7 @@ The project can be opened with Android Studio 3.6.1 or later or you can build th
 $ ./gradlew assembleProdRelease
 ```
 The APK is generated under app/build/outputs/apk/prod/release/package-prod-release.apk
+
 
 ## License
 This project is licensed under the terms of the MPL 2 license. See the [LICENSE](LICENSE) file.
