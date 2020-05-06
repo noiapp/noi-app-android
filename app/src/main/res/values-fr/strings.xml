@@ -73,7 +73,7 @@
         Je voudrais donc interrompre une éventuelle chaîne d'infection en avertissant de façon anonyme les personnes avec lesquelles j'ai été co-présent."</string>
 
     <!-- Ich leide an einem oder mehreren der folgenden Symptome: -->
-    <string name="inform_symptom_starttext">"J'ai un ou plusieurs des symptômes suivants:"</string>
+    <string name="inform_symptom_starttext">"J'ai un ou plusieurs des symptômes suivants: "</string>
 
     <!-- Informieren: Senden Button -->
     <string name="inform_send_button_title">"Envoyer"</string>
@@ -188,7 +188,7 @@
 
     <!-- Titel für Push-Nachrichten, wenn erkannt wird, dass ein Nutzer exposed war -->
     <string name="push_exposed_text">"Veuillez ouvrir l'application pour plus d'informations."</string>
-    <string name="onboarding_top_label_how">"Comment ça marche:"</string>
+    <string name="onboarding_top_label_how">"Comment ça marche :"</string>
     <string name="onboarding_title_1">"Une longueur d'avance"</string>
     <string name="onboarding_desc_1">"Avec l'application Next Step, nous pouvons tous coopérer pour empêcher la propagation de la COVID-19. L'application Next Step permet aux personnes potentiellement infectées de commencer à s'isoler avant de ressentir les premiers symptômes."</string>
     <string name="onboarding_title_2">"Automatiquement
@@ -367,7 +367,7 @@
     <string name="meldungen_additional_info_text3_reduced">"Les experts de la Covid-19 Infoline vous donneront un avis par téléphone."</string>
     <string name="meldungen_infected_title">"Infection rapportée"</string>
     <string name="meldungen_infected_text">"Merci beaucoup ! Toutes les personnes que vous avez informées pourrons s'autoconfiner."</string>
-    <string name="foreground_service_notification_errors">"L'App ne fonctionne pas pour l'instant:"</string>
+    <string name="foreground_service_notification_errors">"L'App ne fonctionne pas pour l'instant :"</string>
     <string name="foreground_service_notification_error_network_sync">"Une erreur est survenue pendant le téléchargement des données."</string>
     <string name="foreground_service_notification_error_location_permission">"L'autorisation pour la localisation est manquante (c'est indispensable pour accèder en modalité Bluetooth)"</string>
     <string name="foreground_service_notification_error_bluetooth_disabled">"La modalité Bluetooth est désactivée"</string>
@@ -431,7 +431,7 @@
     <string name="debug_sdk_state_contact_exposed">"Contact communiqué : "</string>
 
     <!-- Bezeichnung für die Anzahl bluetooth-handshakes, die ausgeführt wurden -->
-    <string name="debug_sdk_state_number_handshakes">"Nombre de handshakes: "</string>
+    <string name="debug_sdk_state_number_handshakes">"Nombre de handshakes : "</string>
 
     <!-- Debug-Status-Bezeichnung für boleschen Wert 'true' -->
     <string name="debug_sdk_state_boolean_true">"oui"</string>
