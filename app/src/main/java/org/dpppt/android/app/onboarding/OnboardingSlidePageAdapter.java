@@ -16,7 +16,8 @@ import org.dpppt.android.app.R;
 public class OnboardingSlidePageAdapter extends FragmentStateAdapter {
 
 	public static final int SCREEN_INDEX_PERMISSIONS = 3;
-
+	public static final int SCREEN_INDEX_FINAL = 5;
+	public int numberPage = 4;
 	public OnboardingSlidePageAdapter(FragmentActivity fragmentActivity) {
 		super(fragmentActivity);
 	}
@@ -41,7 +42,7 @@ public class OnboardingSlidePageAdapter extends FragmentStateAdapter {
 
 	@Override
 	public int getItemCount() {
-		return 5;
+		return this.numberPage;
 	}
 
 }

@@ -18,6 +18,7 @@ import android.os.Bundle;
 import android.provider.Settings;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -65,6 +66,10 @@ public class OnboardingPermissionFragment extends Fragment {
 
 	@Override
 	public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+
+		ImageView img = view.findViewById(R.id.onboarding_illustration);
+		img.getLayoutParams().height = 90;
+
 		locationButton = view.findViewById(R.id.onboarding_location_permission_button);
 		locationButton.setOnClickListener(v -> {
 			String[] permissions = new String[] { Manifest.permission.ACCESS_FINE_LOCATION };
