@@ -42,7 +42,7 @@
     <string name="force_update_title">"Aggiorna"</string>
     <string name="homescreen_handshakes_module_count_info_label">"Le co-presenze saranno memorizzate in modo anonimo sul dispositivo"</string>
     <string name="homescreen_handshakes_module_count_label_format">"{count} nelle ultime 48 ore"</string>
-    <string name="homescreen_handshakes_module_info_label">"Qui troverai le informazioni sulle persone con chi sei stato in co-presenza e che forniscono aggiornamenti sulla COVID-19."</string>
+    <string name="homescreen_handshakes_module_info_label">"Qui troverai le informazioni sulle persone con cui sei stato in co-presenza e che forniscono aggiornamenti sulla COVID-19."</string>
 
     <!-- Informieren Titel -->
     <string name="inform_title">"Ferma la catena dell'infezione"</string>
@@ -113,7 +113,7 @@ Grazie al tuo importante contributo la diffusione della COVID-19 viene tenuta so
     <string name="inform_empfehlung">"Raccomandazione"</string>
 
     <!-- Inform: Empfehlung Text -->
-    <string name="inform_empfehlung_subtext">"Al momento non è consigliato un controllo medico ne un test di laboratorio.
+    <string name="inform_empfehlung_subtext">"Al momento non è consigliato un controllo medico né un test di laboratorio.
 
 Continua a praticare misure igieniche protettive e seguire le regole di comportamento consigliate."</string>
 
@@ -236,7 +236,7 @@ ed anonima"</string>
     <string name="NSBluetoothPeripheralUsageDescription">"Le co-presenze vengono conteggiate in background tramite il Bluetooth."</string>
 
     <!-- Bluetooth Permission Text für iOS -->
-    <string name="NSBluetoothAlwaysUsageDescription">"Le co-presenze vengono conteggiate in background tramite il Bluetooth."</string>
+    <string name="NSBluetoothAlwaysUsageDescription">"Le co-presenze vengono rilevate in background tramite il Bluetooth."</string>
 
     <!-- Text der bei Android in der permanenten Notification immer angezeigt wird -->
     <string name="foreground_service_notification_text">"Le co-presenze vengono salvate in modo anonimo sul tuo dispositivo."</string>
@@ -332,10 +332,10 @@ ed anonima"</string>
 
     <!-- Meldungen: Info Text 1 -->
     <string name="meldungen_additional_info_text1">"Per interrompere la diffusione di un virus, è necessario interrompere la catena d'infezione. Puoi farlo isolando le persone contagiose. C'è un problema con il virus della COVID-19:
-potresti essere contagioso prima di avvertirne i sintomi o in caso fossi asintomatico! Ciò consente al virus di diffondersi se non ci confiniamo, in tempo più breve possibile. Cosi facendo, il nostro sistema sanitario risulterebbe essere sempre un passo indietro per la lotta contro la COVID-19."</string>
+potresti essere contagioso prima di avvertirne i sintomi o in caso fossi asintomatico! Ciò consente al virus di diffondersi se non ci confiniamo, nel più breve tempo possibile. Cosi facendo, il nostro sistema sanitario risulterebbe essere sempre un passo indietro per la lotta contro la COVID-19."</string>
 
     <!-- Meldungen: zusätzlicher Info Text -->
-    <string name="meldungen_additional_info_text2">"Pertanto, le persone che sono state in co-presenza con chi è risultato positivo alla COVID-19 devono essere informate. Ciò consente loro di confinarsi presto prima di avvertire sintomi, evitando cosi di contagiare altre persone. Ovviamente, NON tutte le persone con chi sono stato in co-presenza saranno necessariamente contagiate, ma in questo modo quelli che sono effettivamente portatori non lo possono trasmettere se sono confinati. Cosi facendo, il nostro sistema sanitario sarà sempre un passo avanti rispetto alla COVID-19."</string>
+    <string name="meldungen_additional_info_text2">"Pertanto, le persone che sono state in co-presenza con chi è risultato positivo alla COVID-19 devono essere informate. Ciò consente loro di confinarsi presto prima di avvertire sintomi, evitando così di contagiare altre persone. Ovviamente, NON tutte le persone con chi sono stato in co-presenza saranno necessariamente contagiate, ma gli effettivi portatori, confinandosi, non lo possono trasmettere. Cosi facendo, il nostro sistema sanitario sarà sempre un passo avanti rispetto alla COVID-19."</string>
 
     <!-- Hinweis beim Eingabefeld für den Authentifizierungs-Code -->
     <string name="auth_code_input_hint">"000-000"</string>
@@ -344,7 +344,7 @@ potresti essere contagioso prima di avvertirne i sintomi o in caso fossi asintom
     <string name="meldungen_additional_info_title2">"Come dovrei comportarmi?"</string>
 
     <!-- Meldungen: Text -->
-    <string name="meldungen_additional_info_text3">"Gli esperti del servizio sanitario ti consiglieranno telefonicamente.
+    <string name="meldungen_additional_info_text3">"Gli esperti del Servizio Sanitario ti consiglieranno telefonicamente.
 
 Infoline Coronavirus
 +41 58 463 00 00"</string> <!--TODO - TESTING-->
@@ -367,8 +367,8 @@ Infoline Coronavirus
     <string name="meldungen_infected_text">"Grazie mille! Gli utenti con chi sei stato co-presente sono informati in forma anonima e possono isolarsi."</string>
     <string name="foreground_service_notification_errors">"Al momento l'App non funziona correttamente:"</string>
     <string name="foreground_service_notification_error_network_sync">"Si è verificato un errore durante il caricamento dei dati"</string>
-    <string name="foreground_service_notification_error_location_permission">"Manca l'autorizzazione della posizione (necessaria per accedere al Bluetooth)"</string>
-    <string name="foreground_service_notification_error_bluetooth_disabled">"IL Bluetooth è disattivato"</string>
+    <string name="foreground_service_notification_error_location_permission">"Manca l'autorizzazione della posizione (necessaria per usare il Bluetooth)"</string>
+    <string name="foreground_service_notification_error_bluetooth_disabled">"Il Bluetooth è disattivato"</string>
     <string name="foreground_service_notification_error_battery_optimization">"L'ottimizzazione della batteria è attivata (impedisce un corretto funzionamento in background)"</string>
 
     <!-- Beruhigender Text für Detail-Seite, falls Meldung eingegangen ist -->
