@@ -37,7 +37,6 @@ The full set of documents for DP3T is at https://github.com/DP-3T/documents. Ple
 
 
 ## Installation and Building
-
 The project can be opened with Android Studio 3.6.1 or later or you can build the project with Gradle using
 ```sh
 $ ./gradlew assembleProdRelease
