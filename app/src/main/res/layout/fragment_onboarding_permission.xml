@@ -34,8 +34,6 @@
 		android:layout_marginBottom="@dimen/spacing_large"
 		android:paddingStart="@dimen/spacing_huge"
 		android:paddingEnd="@dimen/spacing_huge"
-		android:scaleX="0.8"
-		android:scaleY="0.8"
 		android:scaleType="fitCenter"
 		android:src="@drawable/ill_bluetooth" />
 
