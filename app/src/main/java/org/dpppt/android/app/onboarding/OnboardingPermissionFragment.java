@@ -19,6 +19,7 @@ import android.provider.Settings;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ScrollView;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -104,6 +105,7 @@ public class OnboardingPermissionFragment extends Fragment {
 	@Override
 	public void onResume() {
 		super.onResume();
+		scrollDown();
 		updateButtonStatus();
 	}
 
@@ -149,6 +151,19 @@ public class OnboardingPermissionFragment extends Fragment {
 		button.setElevation(0);
 		button.setBackgroundTintList(ContextCompat.getColorStateList(requireContext(), R.color.white));
 	}
+
+	private void scrollDown(){
+		if(getActivity()!=null) {
+			ScrollView scrollView = getActivity().findViewById(R.id.onboarding_scroll_view);
+			scrollView.postDelayed(new Runnable() {
+				@Override
+				public void run() {
+					scrollView.fullScroll(View.FOCUS_DOWN);
+				}
+			},300);
+		}
+	}
+
 
 	@Override
 	public void onDestroy() {
