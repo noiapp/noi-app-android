@@ -299,7 +299,7 @@
     <string name="bluetooth_setting_data_explanation_text2">"Caractéristiques importantes:
         - pas de traçage de la localisation géographique
         - pas d'analyses ni de publicité
-        - Architecture ouverte, protôcole et spécification inclus. SDK pour iOS et Android
+        - Architecture ouverte, protocole et spécification inclus. SDK pour iOS et Android
         - Interopérabilité (sa propre app, son propre Backend)
         - Open Source"</string>
     <string name="reports_title_homescreen">"Messages"</string>
