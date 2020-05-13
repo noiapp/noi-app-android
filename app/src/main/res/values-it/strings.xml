@@ -189,9 +189,8 @@ Continua a praticare misure igieniche protettive e seguire le regole di comporta
     <string name="push_exposed_text">"Apri la App Protetti per ulteriori informazioni."</string>
     <string name="onboarding_top_label_how">"Come funziona:"</string>
     <string name="onboarding_title_1">"Un passo avanti"</string>
-    <string name="onboarding_desc_1">"Con l'applicazione Protetti possiamo cooperare per poter tenere la diffusione della COVID-19 sotto controllo. L'applicazione Protetti permette agli utenti potenzialmente infetti di autoisolarsi prima di avvertire sintomi."</string>
-    <string name="onboarding_title_2">"Automatica
-ed anonima"</string>
+    <string name="onboarding_desc_1">"Con l'applicazione Protetti possiamo cooperare per poter tenere la diffusione della COVID-19 sotto controllo. L'applicazione Protetti permette agli utenti possibilmente infetti di potersi autoisolare prima di avere sintomi."</string>
+    <string name="onboarding_title_2">"Automatica ed anonima"</string>
     <string name="onboarding_desc_2">"Protetti rileva le co-presenze con altri utenti e ne tiene traccia in modo anonimo e criptato sul dispositivo."</string>
     <string name="onboarding_title_3">"Informa"</string>
     <string name="onboarding_desc_3">"Se risulti positivo puoi informare tutte le persone con cui sei stato co-presente in modo anonimo per adottare le misure necessarie."</string>
