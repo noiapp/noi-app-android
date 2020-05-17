@@ -22,6 +22,8 @@ import java.util.List;
 
 import org.dpppt.android.app.debug.model.DebugAppState;
 import org.dpppt.android.app.main.model.AppState;
+import org.dpppt.android.app.network.InfoStatusNetwork;
+import org.dpppt.android.app.util.DebugUtils;
 import org.dpppt.android.app.util.DeviceFeatureHelper;
 import org.dpppt.android.sdk.DP3T;
 import org.dpppt.android.sdk.TracingStatus;
@@ -43,6 +45,21 @@ public class TracingViewModel extends AndroidViewModel {
 	private final MutableLiveData<List<TracingStatus.ErrorState>> errorsLiveData = new MutableLiveData<>(Collections.emptyList());
 	private final MutableLiveData<AppState> appStateLiveData = new MutableLiveData<>();
 
+	private final MutableLiveData<Boolean> networkEnableLiveData = new MutableLiveData<>();
+	private BroadcastReceiver networkReceiver = new BroadcastReceiver() {
+		@Override
+		public void onReceive(Context context, Intent intent) {
+			DebugUtils.logDebug("onReceive viewmodel");
+
+			if (InfoStatusNetwork.UPDATE_NETWORK_STATUS.equals(intent.getAction())) {
+				DebugUtils.logDebug("onReceive changeNetworkStatus");
+
+				changeNetworkStatus();
+			}
+		}
+	};
+
+
 	private final MutableLiveData<Boolean> bluetoothEnabledLiveData = new MutableLiveData<>();
 	private BroadcastReceiver bluetoothReceiver = new BroadcastReceiver() {
 		@Override
@@ -63,6 +80,7 @@ public class TracingViewModel extends AndroidViewModel {
 			tracingEnabledLiveData.setValue(status.isAdvertising() && status.isReceiving());
 			numberOfHandshakesLiveData.setValue(status.getNumberOfHandshakes());
 			tracingStatusWrapper.setStatus(status);
+			changeNetworkStatus();
 
 			exposedLiveData.setValue(new Pair<>(tracingStatusWrapper.isReportedAsExposed(), tracingStatusWrapper.wasContactExposed()));
 
@@ -76,6 +94,7 @@ public class TracingViewModel extends AndroidViewModel {
 
 		application.registerReceiver(tracingStatusBroadcastReceiver, DP3T.getUpdateIntentFilter());
 		application.registerReceiver(bluetoothReceiver, new IntentFilter(BluetoothAdapter.ACTION_STATE_CHANGED));
+		application.registerReceiver(networkReceiver, InfoStatusNetwork.getUpdateIntentFilter());
 	}
 
 	public void resetSdk(Runnable onDeleteListener) {
@@ -113,6 +132,10 @@ public class TracingViewModel extends AndroidViewModel {
 		return bluetoothEnabledLiveData;
 	}
 
+	public MutableLiveData<Boolean> getNetworkEnableLiveData() {
+		return networkEnableLiveData;
+	}
+
 	public void setTracingEnabled(boolean enabled) {
 		if (enabled) {
 			DP3T.start(getApplication());
@@ -132,10 +155,15 @@ public class TracingViewModel extends AndroidViewModel {
 		bluetoothEnabledLiveData.setValue(DeviceFeatureHelper.isBluetoothEnabled());
 	}
 
+	private void changeNetworkStatus() {
+		networkEnableLiveData.setValue(InfoStatusNetwork.isConnect(getApplication().getApplicationContext()));
+	}
+
 	@Override
 	protected void onCleared() {
 		getApplication().unregisterReceiver(tracingStatusBroadcastReceiver);
 		getApplication().unregisterReceiver(bluetoothReceiver);
+		getApplication().unregisterReceiver(networkReceiver);
 	}
 
 	public DebugAppState getDebugAppState() {

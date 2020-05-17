@@ -441,4 +441,8 @@ Infoline Coronavirus
 
     <!-- Infotext, wenn lokal das SDK zurückgesetzt wurde -->
     <string name="debug_sdk_reset_text">"Lo stato locale dell'SDK DP-3T è stato ripristinato."</string>
+
+    <!-- Info when network is lost -->
+    <string name="warning_text_network_ko">NOTA: La la rete non è presente quindi non potrai ricevere notifiche di contagio</string>
+    <string name="INFO">INFO</string>
 </resources>
