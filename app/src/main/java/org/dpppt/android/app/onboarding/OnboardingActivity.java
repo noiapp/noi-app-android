@@ -13,25 +13,25 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.PowerManager;
 import android.widget.ScrollView;
+
 import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentActivity;
-import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
-import org.dpppt.android.sdk.DP3T;
-
 import org.dpppt.android.app.R;
+import org.dpppt.android.sdk.DP3T;
 
 public class OnboardingActivity extends FragmentActivity {
 
 	private ViewPager2 viewPager;
-	private FragmentStateAdapter pagerAdapter;
+	private OnboardingSlidePageAdapter pagerAdapter;
 	private FloatingActionButton floatingActionButton;
+
 
 	@Override
 	protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -69,6 +69,11 @@ public class OnboardingActivity extends FragmentActivity {
 	public void updateStepButton() {
 		floatingActionButton.setEnabled(checkPermissionsReady()
 				|| viewPager.getCurrentItem() < OnboardingSlidePageAdapter.SCREEN_INDEX_PERMISSIONS);
+
+		if (checkPermissionsReady()) {
+			pagerAdapter.numberPage = OnboardingSlidePageAdapter.SCREEN_INDEX_FINAL;
+		}
+
 	}
 
 	public boolean checkPermissionsReady() {
