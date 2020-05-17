@@ -9,6 +9,11 @@ plugins {
 	id 'com.gladed.androidgitversion' version '0.4.13'
 }
 
+androidGitVersion {
+	baseCode 90000000
+	codeFormat 'MNNPPP'
+}
+
 android {
 	compileSdkVersion 29
 	buildToolsVersion "29.0.3"
@@ -18,10 +23,7 @@ android {
 		minSdkVersion 23
 		targetSdkVersion 29
 		versionName androidGitVersion.name()
-		versionCode 1
-		/* should become but for now github CI isn't happy:
-			versionCode androidGitVersion.code()
-		 */
+		versionCode androidGitVersion.code()
 	}
 
 	flavorDimensions "version"
