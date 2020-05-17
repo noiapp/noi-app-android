@@ -18,16 +18,18 @@ import org.dpppt.android.app.util.DebugUtils;
 
 public class NotificationService {
 
-    public static final String NOTIFICATION_CHANNEL_ID = "contact-channel";
+    private static final String NOTIFICATION_CHANNEL_ID = "contact-channel";
     public static final int NOTIFICATION_ID = 42;
 
     private Context context;
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
     public NotificationService(Context context)
     {
         this.context = context;
-        createNotificationChannel();
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            createNotificationChannel();
+        }
     }
 
     public void cancelNotification(int notificationId) {
@@ -72,7 +74,7 @@ public class NotificationService {
 
     }
 
-    public boolean alreadyPushNotificationId(StatusBarNotification[] StatusBarNotifications, int notificationId) {
+    private boolean alreadyPushNotificationId(StatusBarNotification[] StatusBarNotifications, int notificationId) {
         for(StatusBarNotification notification: StatusBarNotifications) {
             if (notification.getId() == notificationId) {
                 return true;
@@ -82,13 +84,15 @@ public class NotificationService {
     }
 
     @RequiresApi(api = Build.VERSION_CODES.O)
-    private void createNotificationChannel() {
+    public void createNotificationChannel() {
         NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+
         String channelName = context.getString(R.string.app_name);
         NotificationChannel channel =
                 new NotificationChannel(NOTIFICATION_CHANNEL_ID, channelName, NotificationManager.IMPORTANCE_HIGH);
         channel.setLockscreenVisibility(Notification.VISIBILITY_PRIVATE);
         assert notificationManager != null;
+
         notificationManager.createNotificationChannel(channel);
     }
 }

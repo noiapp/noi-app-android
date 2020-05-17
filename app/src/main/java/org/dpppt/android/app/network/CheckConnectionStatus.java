@@ -2,7 +2,10 @@ package org.dpppt.android.app.network;
 
 import android.app.job.JobParameters;
 import android.app.job.JobService;
+import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.net.ConnectivityManager;
 import android.net.Network;
 import android.os.Build;
@@ -20,8 +23,6 @@ import org.dpppt.android.app.notifications.NotificationService;
 
 public class CheckConnectionStatus extends JobService {
 
-    private ConnectivityManager.NetworkCallback networkCallback;
-    private ConnectivityManager connectivityManager;
     private static boolean flagRegisteredCallBack = false;
 
     @RequiresApi(api = Build.VERSION_CODES.O)
@@ -37,7 +38,7 @@ public class CheckConnectionStatus extends JobService {
             flagRegisteredCallBack = false;
             ScheduleMonitoringStatusNetwork.scheduleJob(getApplicationContext());
             DebugUtils.logDebug("onStartJob - rescheduled because the connection is down");
-            handlerLosNetworkConnection();
+            handleNetworkDown();
             return true;
         }
 
@@ -47,46 +48,65 @@ public class CheckConnectionStatus extends JobService {
         return true;
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
     private void registerNetworkCallBack() {
-        connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         assert connectivityManager != null;
 
-        NotificationService notificationService = new NotificationService(getApplicationContext());
-
-        connectivityManager.registerDefaultNetworkCallback(
-                networkCallback = new ConnectivityManager.NetworkCallback() {
-                    @Override
-                    public void onAvailable(@NonNull Network network) {
-                        Toast.makeText(getApplicationContext(), "Network up", Toast.LENGTH_LONG).show();
-                        DebugUtils.logDebug("Network up");
-                        InfoStatusNetwork.sendUpdateBroadcast(getApplicationContext());
-                        notificationService.cancelNotification(NotificationService.NOTIFICATION_ID);
-                    }
-
-                    @Override
-                    public void onLost(@NonNull Network network) {
-
-                        if (!InfoStatusNetwork.isConnect(getApplicationContext())) {
-                            handlerLosNetworkConnection();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            connectivityManager.registerDefaultNetworkCallback(
+                    new ConnectivityManager.NetworkCallback() {
+                        @Override
+                        public void onAvailable(@NonNull Network network) {
+                            handleNetworkUp();
                         }
-                    }
 
-                });
+                        @Override
+                        public void onLost(@NonNull Network network) {
 
-        DebugUtils.logDebug("networkCallback registered");
+                            if (!InfoStatusNetwork.isConnect(getApplicationContext())) {
+                                handleNetworkDown();
+                            }
+                        }
+
+                    });
+        } else {
+            registerReceiver(
+                    new BroadcastReceiver() {
+                        @Override
+                        public void onReceive(Context context, Intent intent) {
+
+                            if (!InfoStatusNetwork.isConnect(getApplicationContext())) {
+                                handleNetworkDown();
+                                return;
+                            }
+                            handleNetworkUp();
+                        }
+                    },
+                    new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION)
+            );
+        }
+
         flagRegisteredCallBack = true;
+        DebugUtils.logDebug("networkCallback registered");
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
-    private void handlerLosNetworkConnection() {
+    private void handleNetworkUp() {
+        NotificationService notificationService = new NotificationService(getApplicationContext());
+
+        Toast.makeText(getApplicationContext(), "Network up", Toast.LENGTH_LONG).show();
+        DebugUtils.logDebug("Network up");
+        InfoStatusNetwork.sendUpdateBroadcast(getApplicationContext());
+        notificationService.cancelNotification(NotificationService.NOTIFICATION_ID);
+    }
+
+
+    private void handleNetworkDown() {
         NotificationService notificationService = new NotificationService(getApplicationContext());
 
         Toast.makeText(getApplicationContext(), "Network down", Toast.LENGTH_LONG).show();
         DebugUtils.logDebug("Network down");
 
         InfoStatusNetwork.sendUpdateBroadcast(getApplicationContext());
-
         notificationService.pushNotification(
                 getString(R.string.INFO),
                 getApplicationContext().getString(R.string.warning_text_network_ko),

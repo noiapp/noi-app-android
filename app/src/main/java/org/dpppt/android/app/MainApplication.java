@@ -12,8 +12,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Build;
-import androidx.annotation.RequiresApi;
-
 import org.dpppt.android.app.network.ScheduleMonitoringStatusNetwork;
 import org.dpppt.android.app.notifications.NotificationService;
 import org.dpppt.android.sdk.DP3T;
@@ -26,7 +24,6 @@ public class MainApplication extends Application {
 
 	private NotificationService notificationService;
 
-	@RequiresApi(api = Build.VERSION_CODES.O)
 	@Override
 	public void onCreate() {
 		super.onCreate();
@@ -56,6 +53,10 @@ public class MainApplication extends Application {
 			if (!prefs.getBoolean("notification_shown", false)) {
 				TracingStatus status = DP3T.getStatus(context);
 				if (status.wasContactExposed()) {
+
+					if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+						notificationService.createNotificationChannel();
+					}
 
 					notificationService.pushNotification(
 							context.getString(R.string.push_exposed_title),
