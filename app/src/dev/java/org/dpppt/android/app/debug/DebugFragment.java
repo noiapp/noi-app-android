@@ -39,6 +39,8 @@ import org.dpppt.android.app.main.TracingViewModel;
 import org.dpppt.android.app.util.InfoDialog;
 import org.dpppt.android.sdk.DP3T;
 import org.dpppt.android.sdk.TracingStatus;
+import org.dpppt.android.sdk.internal.AppConfigManager;
+import org.dpppt.android.sdk.internal.backend.models.ApplicationInfo;
 
 public class DebugFragment extends Fragment {
 
@@ -112,12 +114,19 @@ public class DebugFragment extends Fragment {
 			AlertDialog progressDialog = new AlertDialog.Builder(getContext())
 					.setView(R.layout.dialog_loading)
 					.show();
+
+			AppConfigManager appConfigManager = AppConfigManager.getInstance(getContext());
+
+			ApplicationInfo appcfg = appConfigManager.getAppConfig();
+
 			tracingViewModel.resetSdk(() -> {
 				progressDialog.dismiss();
 				InfoDialog.newInstance(R.string.debug_sdk_reset_text)
 						.show(getChildFragmentManager(), InfoDialog.class.getCanonicalName());
 				updateRadioGroup(getView().findViewById(R.id.debug_state_options_group));
 			});
+			appConfigManager.setManualApplicationInfo(appcfg);
+
 			//Restart tracing after reset
 			if (sync) {
 				sync = false;
