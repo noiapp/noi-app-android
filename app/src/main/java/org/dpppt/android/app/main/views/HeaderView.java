@@ -23,6 +23,8 @@ import android.view.View;
 import android.view.animation.*;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.Toast;
+
 import androidx.annotation.DrawableRes;
 import androidx.annotation.Nullable;
 
@@ -122,11 +124,16 @@ public class HeaderView extends FrameLayout {
 		int iconRes = 0;
 		switch (state) {
 			case TRACING:
+			case NETWORK_OK:
 				iconRes = (R.drawable.ic_header_check);
 				backgroundColor = getResources().getColor(R.color.status_green, null);
 				break;
 			case ERROR:
 				iconRes = (R.drawable.ic_header_error);
+				backgroundColor = getResources().getColor(R.color.status_red, null);
+				break;
+			case NETWORK_KO:
+				iconRes = (R.drawable.ic_header_info);
 				backgroundColor = getResources().getColor(R.color.status_red, null);
 				break;
 			case EXPOSED_ERROR:
@@ -161,7 +168,9 @@ public class HeaderView extends FrameLayout {
 		}
 
 		stopArcAnimation();
-		if (state != AppState.ERROR && state != AppState.EXPOSED_ERROR) {
+		if (state != AppState.ERROR &&
+			state != AppState.EXPOSED_ERROR &&
+		    state != AppState.NETWORK_KO) {
 			arcRunnable = new ArcRunnable(3);
 			arcHandler.postDelayed(arcRunnable, initialUpdate ? INITIAL_DELAY_ARC : 0);
 		}

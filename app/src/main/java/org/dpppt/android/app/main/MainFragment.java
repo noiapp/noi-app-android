@@ -8,6 +8,8 @@ package org.dpppt.android.app.main;
 import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -18,6 +20,7 @@ import java.util.List;
 import org.dpppt.android.app.R;
 import org.dpppt.android.app.contacts.ContactsFragment;
 import org.dpppt.android.app.debug.DebugFragment;
+import org.dpppt.android.app.main.model.AppState;
 import org.dpppt.android.app.util.DebugUtils;
 import org.dpppt.android.app.main.views.HeaderView;
 import org.dpppt.android.app.notifications.NotificationsFragment;
@@ -67,6 +70,18 @@ public class MainFragment extends Fragment {
 		headerView = view.findViewById(R.id.main_header_container);
 		tracingViewModel.getAppStateLiveData()
 				.observe(getViewLifecycleOwner(), appState -> headerView.setState(appState));
+
+		tracingViewModel.getNetworkEnableLiveData()
+				.observe(getViewLifecycleOwner(),
+				networkStatus -> {
+
+					if (networkStatus) {
+						headerView.setState(AppState.NETWORK_OK);
+						return;
+					}
+
+					headerView.setState(AppState.NETWORK_KO);
+				});
 	}
 
 	private void setupCards(View view) {
@@ -78,15 +93,22 @@ public class MainFragment extends Fragment {
 		View contactStatusView = view.findViewById(R.id.contacts_status);
 		tracingViewModel.getTracingEnabledLiveData().observe(getViewLifecycleOwner(),
 				isTracing -> {
-					List<TracingStatus.ErrorState> errors = tracingViewModel.getErrorsLiveData().getValue();
-					TracingStatusHelper.State state = errors.size() > 0 || !isTracing ? TracingStatusHelper.State.WARNING :
-													  TracingStatusHelper.State.OK;
-					int titleRes = state == TracingStatusHelper.State.OK ? R.string.tracing_active_title
-																		 : R.string.tracing_error_title;
-					int textRes = state == TracingStatusHelper.State.OK ? R.string.tracing_active_text
-																		: R.string.tracing_error_text;
-					TracingStatusHelper.updateStatusView(contactStatusView, state, titleRes, textRes);
+					assignInformationNotice(contactStatusView, isTracing);
 				});
+
+		tracingViewModel.getNetworkEnableLiveData()
+				.observe(getViewLifecycleOwner(),
+						networkStatus -> {
+							Boolean status = tracingViewModel.getTracingEnabledLiveData().getValue();
+							assignInformationNotice(contactStatusView, status);
+
+							if (!networkStatus) {
+								TextView textView = contactStatusView.findViewById(R.id.status_text);
+								textView.setText(String.format("%s %s",
+										textView.getText(),
+										getString(R.string.warning_text_network_ko)));
+							}
+						});
 
 		view.findViewById(R.id.card_notifications).setOnClickListener(
 				v -> getParentFragmentManager().beginTransaction()
@@ -121,6 +143,22 @@ public class MainFragment extends Fragment {
 							.valueOf(getContext().getColor(isExposed ? R.color.status_blue : R.color.status_green_bg)));
 					TracingStatusHelper.updateStatusView(notificationStatusView, state, title, text);
 				});
+	}
+
+	private void assignInformationNotice(View contactStatusView, Boolean isTracing) {
+		TracingStatusHelper.State state = revealTracingStatus(isTracing);
+		int titleRes = state == TracingStatusHelper.State.OK ? R.string.tracing_active_title
+															 : R.string.tracing_error_title;
+		int textRes = state == TracingStatusHelper.State.OK ? R.string.tracing_active_text
+															: R.string.tracing_error_text;
+		TracingStatusHelper.updateStatusView(contactStatusView, state, titleRes, textRes);
+	}
+
+	private TracingStatusHelper.State revealTracingStatus(Boolean isTracing) {
+		List<TracingStatus.ErrorState> errors = tracingViewModel.getErrorsLiveData().getValue();
+		assert errors != null;
+		return errors.size() > 0 || !isTracing ? TracingStatusHelper.State.WARNING :
+										  TracingStatusHelper.State.OK;
 	}
 
 	private void setupDebugButton(View view) {

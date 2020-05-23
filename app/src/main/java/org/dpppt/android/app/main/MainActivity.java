@@ -19,7 +19,7 @@ import org.dpppt.android.app.onboarding.OnboardingActivity;
 
 public class MainActivity extends FragmentActivity {
 
-	private static final String PREFS_COVID = "PREFS_COVID";
+	public static final String PREFS_COVID = "PREFS_COVID";
 	private static final String PREF_KEY_ONBOARDING_COMPLETED = "PREF_KEY_ONBOARDING_COMPLETED";
 
 	private static final int REQ_ONBOARDING = 123;

@@ -435,4 +435,6 @@ Coronavirus Infoline
 
     <!-- Infotext, wenn lokal das SDK zurückgesetzt wurde -->
     <string name="debug_sdk_reset_text">"The local data of the dp-3t sdk has been reset."</string>
+    <string name="warning_text_network_ko">NOTA: La la rete non è presente quindi non potrai ricevere notifiche di contagio</string>
+    <string name="INFO">INFO</string>
 </resources>
