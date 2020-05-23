@@ -2,7 +2,8 @@
 
 [![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://github.com/DP-3T/dp3t-app-android/blob/master/LICENSE)
 ![Android Build](https://github.com/DP-3T/dp3t-app-android/workflows/Android%20Build/badge.svg)
-
+[![security status](https://meterian.com/badge/gh/noiapp/noi-app-android/security)](https://meterian.com/report/gh/noiapp/noi-app-android)
+[![stability status](https://meterian.com/badge/gh/noiapp/noi-app-android/stability)](https://meterian.com/report/gh/noiapp/noi-app-android)
 
 ## DP3T
 The Decentralised Privacy-Preserving Proximity Tracing (DP-3T) project is an open protocol for COVID-19 proximity tracing using Bluetooth Low Energy functionality on mobile devices that ensures personal data and computation stays entirely on an individual's phone. It was produced by a core team of over 25 scientists and academic researchers from across Europe. It has also been scrutinized and improved by the wider community.
