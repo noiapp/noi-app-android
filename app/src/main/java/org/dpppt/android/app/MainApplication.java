@@ -34,8 +34,13 @@ public class MainApplication extends Application {
 		super.onCreate();
 		if (ProcessUtil.isMainProcess(this)) {
 			registerReceiver(broadcastReceiver, DP3T.getUpdateIntentFilter());
-			DP3T.init(this, new ApplicationInfo("it.noiapp.demo", "https://protetti.app/"));
-		}
+
+			if(BuildConfig.CUSTOM_BACKEND_URL.length() > 0) {
+				DP3T.init(this, new ApplicationInfo(BuildConfig.APPNAME, BuildConfig.CUSTOM_BACKEND_URL));
+			}else{
+				DP3T.init(this, BuildConfig.APPNAME, BuildConfig.FLAVOR.equals("dev"));
+			}
+	}
 	}
 
 	@Override
